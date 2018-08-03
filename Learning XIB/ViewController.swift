@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func buttonGo(_ sender: Any) {
+        
+        //1. Initiate
+        let secondVC = SecondViewController()
+        self.navigationController?.pushViewController(secondVC, animated: true)
+        
+    }
+    
 }
 

@@ -12,10 +12,30 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let rootView = ViewController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //1. Configure Window for the first time, screen neet to have Window as their interface foundation
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        window?.backgroundColor = .white
+        
+        //2. Set up who's became parent view controller / root view controller
+        let rootVC = ViewController()
+        
+        //3. Set up nativation controller to rootViewController
+        let navController = UINavigationController(rootViewController: rootVC) //Optional
+        
+        //4. Connecting window to rootViewController
+        window?.rootViewController = navController
+        
+        //5. Make our window became real
+        window?.makeKeyAndVisible()
+        
+        
+        
+        
         return true
     }
 
